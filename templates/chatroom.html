@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+       <script src="../static/JS.js"></script>
+       <link rel="stylesheet" href=
+     "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+     <script src=
+     "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+     </script>
+     <script src=
+     "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+     </script>
+     <script src=
+     "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+     </script>
+      <link rel="stylesheet" href="../static/styles.css">
+    </head>
+    <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;  </span>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link active" href="#"> +Channel <span class="sr-only">(current)</span></a>
+            <a id="logout" class="nav-item nav-link" href="#">Logout</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="chat">
+        <div class="form-group shadow-textarea">
+          <label id = "textarea_label"for="exampleFormControlTextarea6">{{channel_name}}</label>
+          <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+          <input id = "textfield" type="text" name="textfield" placeholder="Write a message">
+          <input type="submit" name="send" value="send">
+          <input type="submit" name="leave" value="leave channel">
+        </div>
+
+      </div>
+
+
+
+    </body>
+</html>
