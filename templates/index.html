@@ -59,7 +59,12 @@
   if (localStorage.getItem('last_channel')) {
       // Redirect to last channel
       let channel = localStorage.getItem('last_channel');
-      window.location.replace('/channel/' + channel);}
+      try {
+            window.location.replace('/channel/' + channel);
+          }
+          catch(err) {
+              window.location.replace('/');
+        }}
 
 </script>
 
