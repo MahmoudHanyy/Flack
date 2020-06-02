@@ -25,10 +25,9 @@
 
      <div id="mySidenav" class="sidenav">
        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-       <a href="#">About</a>
-       <a href="#">Services</a>
-       <a href="#">Clients</a>
-       <a href="#">Contact</a>
+       {%for channel in channels%}
+       <a href="/channel/{{channel}}">{{channel}}</a>
+       {%endfor%}
      </div>
      <nav class="navbar navbar-expand-lg navbar-light bg-light">
        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;  </span>
@@ -37,20 +36,34 @@
        </button>
        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
          <div class="navbar-nav">
+           <a class="nav-item nav-link active" href="#"> + <span class="sr-only">(current)</span></a>
            <a class="nav-link"  id="username_label" href="#" style="color:lightseagreen">{{ session.username }}</a>
            <a id="logout" class="nav-item nav-link" href="/logout">Logout</a>
          </div>
        </div>
      </nav>
  <div class= "channel-form ">
-     <form>
+     <form action="/create" method="POST">
        <div class="form-group">
          <label for="exampleInputEmail1">Create a channel or join an existing one!</label>
-         <input type="text" size= 50 class="form-control" id="exampleInputEmail1" >
+         <input type="text" class="form-control" name="channel" id="channel" autofocus>
          <small id="emailHelp" class="form-text text-muted">choose a Display name to be known for.</small>
        </div>
        <button type="submit" class="btn btn-primary">Enter</button>
      </form>
 </div>
+
+
+ <script>
+
+  if (localStorage.getItem('last_channel')) {
+      // Redirect to last channel
+      let channel = localStorage.getItem('last_channel');
+      window.location.replace('/channel/' + channel);}
+
+</script>
+
   </body>
+
+
 </html>
